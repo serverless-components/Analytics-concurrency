@@ -1,0 +1,21 @@
+{
+  "name": "analytics-concurrency",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:data": "node parseCSV.js",
+    "build:result": "node --experimental-json-modules time.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^5.0.3",
+    "dayjs": "^1.10.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.4.1"
+  }
+}
