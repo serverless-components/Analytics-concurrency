@@ -1,10 +1,8 @@
 import dayjs from 'dayjs';
 import isbetween from 'dayjs/plugin/isBetween.js';
 import fs from 'fs';
-import tData from './data.json' assert { type: 'json' };
-import timeRange from './timeRange.json' assert { type: 'json' };
+import { parseJsonFile } from './utils.js';
 
-const { data, date } = tData;
 dayjs.extend(isbetween);
 
 const sum = arr => {
@@ -19,7 +17,12 @@ const sum = arr => {
 }
 */
 const result = [];
-const parseTime = () => {
+const parseTime = async () => {
+  const tData = await parseJsonFile('./data.json');
+  const { data, date } = tData;
+
+  const timeRange = await parseJsonFile('./timeRange.json');
+
   const prefixDate = dayjs().format('YYYY-MM-DD');
   for (let i = 0; i < timeRange.length; ++i) {
     const [s, e] = timeRange[i];

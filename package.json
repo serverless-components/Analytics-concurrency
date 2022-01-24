@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "build:data": "node parseCSV.js",
-    "build:result": "node --experimental-json-modules time.js"
+    "build:result": "node time.js"
   },
   "keywords": [],
   "author": "",
